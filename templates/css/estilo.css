@@ -1,0 +1,52 @@
+body{
+    /* Cor de fundo background: blue; */
+    font: normal 20px Arial;  /**/
+}
+
+header {
+    color: white;/*cor da fonte */
+    text-align: center;/**/
+}
+
+section {
+    background: white;/*cor de fundo */
+    border-radius: 15px;/*bordas arredondadas*/
+    padding: 15px;/*espaço entre o texto e a borda*/
+    width: 500px;/*largura*/
+    margin: auto;/*centralizar a div no meio da tela*/
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.301);/* sobreamento e cor*/
+}
+
+div {
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    color: white;/* cor da fonte */
+    text-align: center;/* centralizar texto*/
+    font-style: italic; /* fonte itálica */
+}
+
+/* id=msgs */
+#msgs {
+    color: white;/*cor da fonte */
+}
+
+/* class=container */
+.container { 
+    text-align: center;
+    background-color: red;
+    width: 1000px;
+    height: 300px;
+
+}
+
+.centralizar {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
