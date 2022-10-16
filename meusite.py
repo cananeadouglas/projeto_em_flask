@@ -2,7 +2,7 @@ from crypt import methods
 from flask import Flask, render_template, request
 import sqlite3
 from random import randint
-import math
+import math, datetime, time
 
 app = Flask(__name__)
 
@@ -78,3 +78,32 @@ def hypot():
         descri = "o valor da hipotenusa é {:.2f}".format(hi)
 
         return render_template("base.html", variavel_base = descri)
+
+@app.route('/udcm', methods=["GET", "POST"])
+def udcm():
+    valor = ""
+
+    if request.method == "GET":
+        return render_template("udcm.html", variavel_base = valor)
+    else:
+        num = int(request.form.get("qual"))
+
+        uni = num // 1 % 10
+        dez = num // 10 % 10
+        cen = num // 100 % 10
+        mil = num // 1000 % 10
+
+        descri = "unidade é {}\n dezena é {}\n centena é {}\n milhar é {}\n".format(uni, dez, cen, mil)
+        
+        return render_template("base.html", variavel_base = descri)
+
+@app.route('/datahora')
+def datahora():
+    now = datetime.datetime.now()
+    formatted_now = now.strftime("%A, %d %B, %Y at %X")
+
+    return render_template(
+        "base.html",
+        title = now,
+        message = "Primo Programador",
+        content = " on " + formatted_now)
